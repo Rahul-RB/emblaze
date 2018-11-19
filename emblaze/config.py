@@ -9,7 +9,7 @@ class DevelopmentConfig(Config):
     DEBUG = True
     TEMPLATES_AUTO_RELOAD=True
     CACHE_TYPE = "null"
-    UPLOAD_FOLDER  = "./emblaze/uploads"
+    UPLOAD_FOLDER  = "./emblaze/ResumeParser/data/input/example_resumes"
     ALLOWED_EXTENSIONS = set(['pdf'])
 
     

@@ -5,6 +5,9 @@ from emblaze.models import models_common
 from flask import Flask,render_template,redirect,url_for,flash, redirect, request, session, abort, jsonify, Response
 from werkzeug import secure_filename
 from flask import send_from_directory, send_file
+
+from emblaze.ResumeParser.bin import main as parser
+
 import os
 import datetime
 
@@ -13,6 +16,7 @@ app.secret_key = 'secretkeyhereplease'
 # Rahul's
 @app.route("/")
 def home():
+    print(parser)
     return render_template("index.html")
 
 def allowedFile(filename):
@@ -21,7 +25,13 @@ def allowedFile(filename):
 
 @app.route('/uploads/<filename>')
 def viewUploadedFile(filename):
-    return send_file("uploads/"+str(filename))
+    parser.main()
+    # return
+    # return send_file("ResumeParser/data/output/resume_summary.csv")
+    return send_file("ResumeParser/data/output/resume_summary.csv",
+                     mimetype='text/csv',
+                     attachment_filename='Outputs.csv',
+                     as_attachment=True)
 
 @app.route('/uploader', methods=['GET', 'POST'])
 def uploadFile():
@@ -38,7 +48,7 @@ def uploadFile():
             return redirect(request.url)
         if file and allowedFile(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+            file.save(os.path.join(app.config["UPLOAD_FOLDER"], "resume.pdf"))
             return redirect(url_for('viewUploadedFile',
                                     filename=filename))
     flash("Error")
