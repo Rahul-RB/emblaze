@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Index</title>
+    <title>Index</title>
 </head>
 <body>
-	Hello World
+    Hello World
+    <form method="post" action={{ url_for("uploadFile") }} enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
 </body>
 </html>

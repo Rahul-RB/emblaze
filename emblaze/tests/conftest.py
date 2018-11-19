@@ -1,6 +1,6 @@
 import sys
 import pytest
-from hawkeye import app as flaskApp
+from emblaze import app as flaskApp
 
 @pytest.fixture
 def app():
