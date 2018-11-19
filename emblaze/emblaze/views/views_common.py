@@ -15,16 +15,16 @@ app.secret_key = 'secretkeyhereplease'
 def home():
     return render_template("index.html")
 
-def allowed_file(filename):
+def allowedFile(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in app.config["ALLOWED_EXTENSIONS"]
 
 @app.route('/uploads/<filename>')
-def uploaded_file(filename):
+def viewUploadedFile(filename):
     return send_file("uploads/"+str(filename))
 
-@app.route('/', methods=['GET', 'POST'])
-def upload_file():
+@app.route('/uploader', methods=['GET', 'POST'])
+def uploadFile():
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
@@ -36,9 +36,9 @@ def upload_file():
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
-        if file and allowed_file(file.filename):
+        if file and allowedFile(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-            return redirect(url_for('uploaded_file',
+            return redirect(url_for('viewUploadedFile',
                                     filename=filename))
-    flask("Error")
+    flash("Error")

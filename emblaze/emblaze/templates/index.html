@@ -5,9 +5,9 @@
 </head>
 <body>
     Hello World
-    <form method=post enctype=multipart/form-data>
-        <input type=file name=file>
-        <input type=submit value=Upload>
+    <form method="post" action={{ url_for("uploadFile") }} enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
     </form>
 </body>
 </html>
