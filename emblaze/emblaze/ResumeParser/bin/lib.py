@@ -1,6 +1,7 @@
 """
 coding=utf-8
 """
+from emblaze import app
 import logging
 
 import os
@@ -15,19 +16,39 @@ AVAILABLE_EXTENSIONS = {'.csv', '.doc', '.docx', '.eml', '.epub', '.gif', '.htm'
                         '.tif', '.tiff', '.tsv', '.txt', '.wav', '.xls', '.xlsx'}
 
 
-def load_confs(confs_path='../confs/config.yaml'):
+# def load_confs(confs_path='../confs/config.yaml'):
+#     # TODO Docstring
+#     global CONFS
+
+#     if CONFS is None:
+#         try:
+#             CONFS = yaml.load(open(confs_path))
+#         except IOError:
+#             confs_template_path = confs_path + '.template'
+#             logging.warn(
+#                 'Confs path: {} does not exist. Attempting to load confs template, '
+#                 'from path: {}'.format(confs_path, confs_template_path))
+#             CONFS = yaml.load(open(confs_template_path))
+#             # print()
+#             # print(CONFS)
+#             # print()
+#             # exit()
+#     return CONFS
+
+def load_confs():
     # TODO Docstring
     global CONFS
-
+    confs_path="ResumeParser/confs/config.yaml"
     if CONFS is None:
         try:
             CONFS = yaml.load(open(confs_path))
         except IOError:
-            confs_template_path = confs_path + '.template'
+            confs_template_path = app.open_resource(confs_path + ".template")
+            print(confs_template_path)
             logging.warn(
                 'Confs path: {} does not exist. Attempting to load confs template, '
                 'from path: {}'.format(confs_path, confs_template_path))
-            CONFS = yaml.load(open(confs_template_path))
+            CONFS = yaml.load(open(confs_template_path.name))
             # print()
             # print(CONFS)
             # print()
@@ -59,7 +80,8 @@ def archive_dataset_schemas(step_name, local_dict, global_dict):
 
     # Reference variables
     data_schema_dir = get_conf('data_schema_dir')
-    schema_output_path = os.path.join(data_schema_dir, step_name + '.csv')
+    # schema_output_path = os.path.join(data_schema_dir, step_name + '.csv')
+    schema_output_path = app.open_resource(os.path.join(data_schema_dir, step_name + '.csv')).name
     schema_agg = list()
 
     env_variables = dict()

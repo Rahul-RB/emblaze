@@ -25,8 +25,13 @@ def allowedFile(filename):
 
 @app.route('/uploads/<filename>')
 def viewUploadedFile(filename):
-    # parser
-    return send_file("ResumeParser/data/input/example_resumes/"+str(filename))
+    parser.main()
+    # return
+    # return send_file("ResumeParser/data/output/resume_summary.csv")
+    return send_file("ResumeParser/data/output/resume_summary.csv",
+                     mimetype='text/csv',
+                     attachment_filename='Outputs.csv',
+                     as_attachment=True)
 
 @app.route('/uploader', methods=['GET', 'POST'])
 def uploadFile():
@@ -43,7 +48,7 @@ def uploadFile():
             return redirect(request.url)
         if file and allowedFile(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+            file.save(os.path.join(app.config["UPLOAD_FOLDER"], "resume.pdf"))
             return redirect(url_for('viewUploadedFile',
                                     filename=filename))
     flash("Error")

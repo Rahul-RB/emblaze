@@ -5,6 +5,8 @@ coding=utf-8
 Code Template
 
 """
+from emblaze import app
+
 import logging
 import os
 import pandas
@@ -50,10 +52,16 @@ def extract():
     # Reference variables
     candidate_file_agg = list()
 
-    # Create list of candidate files
-    for root, subdirs, files in os.walk(lib.get_conf('resume_directory')):
-        folder_files = [os.path.join(root, x) for x in files]
-        candidate_file_agg.extend(folder_files)
+    # # Create list of candidate files
+    # for root, subdirs, files in os.walk(lib.get_conf('resume_directory')):
+    #     folder_files = [app.open_resource(os.path.join(root, x)).name for x in files]
+    #     candidate_file_agg.extend(folder_files)
+
+    folder_files = [app.open_resource(os.path.join(lib.get_conf('resume_directory'), "resume.pdf")).name]
+    candidate_file_agg.extend(folder_files)
+
+    # print("folder_files:",folder_files)
+    logging.info("candidate_file_agg:{0}".format(candidate_file_agg))
 
     # Convert list to a pandas DataFrame
     observations = pandas.DataFrame(data=candidate_file_agg, columns=['file_path'])
@@ -97,8 +105,8 @@ def transform(observations, nlp):
 
 def load(observations, nlp):
     logging.info('Begin load')
-    output_path = os.path.join(lib.get_conf('summary_output_directory'), 'resume_summary.csv')
-
+    output_path = app.open_resource(os.path.join(lib.get_conf('summary_output_directory'), 'resume_summary.csv')).name
+    logging.info("output_path:{0}".format(output_path))
     logging.info('Results being output to {}'.format(output_path))
     print(('Results output to {}'.format(output_path)))
 

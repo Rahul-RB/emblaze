@@ -1,5 +1,5 @@
-index;file_path;extension;text;candidate_name;email;phone;experience;platforms;programming;hobbies;open-source;database;machinelearning;languages;universities
-0;../data/input/example_resumes/Resume.pdf;.pdf;"Jonathan Merrin
+index;file_path;extension;text;candidate_name;email;phone;database;open-source;languages;platforms;programming;experience;hobbies;machinelearning;universities
+0;/home/rahul/Desktop/PESU/PESU-7THSEM/WT-2/project/emblaze/emblaze/emblaze/ResumeParser/data/input/example_resumes/resume.pdf;.pdf;"Jonathan Merrin
 Jmerrin@andrew.cmu.edu
 Cell: 917-612-1478
 Carnegie Mellon University, SMC 4415
@@ -57,4 +57,4 @@ Introduction to Computer Systems (15-213)
 Independent Study in Computer Pedagogy (15-539)
 Concepts of Math
 
-";Jonathan Merrin;Jmerrin@andrew.cmu.edu;('917', '612', '1478');{'developer', 'Teacher'};set();{'C', 'JavaScript', '.NET', 'java', 'R', 'python'};set();set();set();set();set();set()
+";Jonathan Merrin;Jmerrin@andrew.cmu.edu;('917', '612', '1478');set();set();set();set();{'C', 'JavaScript', 'R', '.NET', 'python', 'java'};{'Teacher', 'developer'};set();set();set()
