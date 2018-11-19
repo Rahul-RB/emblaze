@@ -5,6 +5,9 @@ from emblaze.models import models_common
 from flask import Flask,render_template,redirect,url_for,flash, redirect, request, session, abort, jsonify, Response
 from werkzeug import secure_filename
 from flask import send_from_directory, send_file
+
+from emblaze.ResumeParser.bin import main as parser
+
 import os
 import datetime
 
@@ -13,6 +16,7 @@ app.secret_key = 'secretkeyhereplease'
 # Rahul's
 @app.route("/")
 def home():
+    print(parser)
     return render_template("index.html")
 
 def allowedFile(filename):
@@ -21,7 +25,8 @@ def allowedFile(filename):
 
 @app.route('/uploads/<filename>')
 def viewUploadedFile(filename):
-    return send_file("uploads/"+str(filename))
+    # parser
+    return send_file("ResumeParser/data/input/example_resumes/"+str(filename))
 
 @app.route('/uploader', methods=['GET', 'POST'])
 def uploadFile():
