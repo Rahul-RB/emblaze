@@ -29,7 +29,8 @@ def main():
     observations = extract()
 
     # Spacy: Spacy NLP
-    nlp = spacy.load('en_core_web_sm')
+    # nlp = spacy.load('en_core_web_sm')
+    nlp = spacy.load('en')
 
     # Transform data to have appropriate fields
     observations, nlp = transform(observations, nlp)

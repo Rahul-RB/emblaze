@@ -1,3 +1,4 @@
+import subprocess
 from emblaze import app
 
 from emblaze.models import models_common 
@@ -7,16 +8,17 @@ from werkzeug import secure_filename
 from flask import send_from_directory, send_file
 
 from emblaze.ResumeParser.bin import main as parser
-
+from emblaze import ResumeGenerator
+rgPath = ResumeGenerator.__path__._path[0]
 import os
 import datetime
+import time
 
 app.secret_key = 'secretkeyhereplease'
 
 # Rahul's
 @app.route("/")
 def home():
-    print(parser)
     return render_template("index.html")
 
 def allowedFile(filename):
@@ -28,10 +30,15 @@ def viewUploadedFile(filename):
     parser.main()
     # return
     # return send_file("ResumeParser/data/output/resume_summary.csv")
-    return send_file("ResumeParser/data/output/resume_summary.csv",
-                     mimetype='text/csv',
-                     attachment_filename='Outputs.csv',
-                     as_attachment=True)
+    # return send_file("ResumeParser/data/output/resume_summary.csv",
+    #                  mimetype='text/csv',
+    #                  attachment_filename='Outputs.csv',
+    #                  as_attachment=True)
+    # p = subprocess.Popen(["npm run dev"], cwd="../../../../Test-Resume-Generator/ResumeGenerator/")
+    # p = subprocess.Popen(["npm run dev"], cwd=app.open_resource("ResumeGenerator/").name)
+    p = subprocess.Popen(["npm", "run", "dev"], cwd=rgPath)
+    time.sleep(10)
+    return redirect("http://localhost:8080")
 
 @app.route('/uploader', methods=['GET', 'POST'])
 def uploadFile():
