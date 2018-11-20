@@ -34,8 +34,6 @@ def viewUploadedFile(filename):
     #                  mimetype='text/csv',
     #                  attachment_filename='Outputs.csv',
     #                  as_attachment=True)
-    # p = subprocess.Popen(["npm run dev"], cwd="../../../../Test-Resume-Generator/ResumeGenerator/")
-    # p = subprocess.Popen(["npm run dev"], cwd=app.open_resource("ResumeGenerator/").name)
     p = subprocess.Popen(["npm", "run", "dev"], cwd=rgPath)
     time.sleep(10)
     return redirect("http://localhost:8080")
