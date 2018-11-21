@@ -1,8 +1,0 @@
-Credits:
-Jquery
-Bootstrap
-Owl carousel
-Font-awesome
-Magnific-popup
-Images : pexels, pixabay, unsplash
-Goolgle fonts : Poppins

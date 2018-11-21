@@ -5,12 +5,12 @@ text,object,observations
 candidate_name,object,observations
 email,object,observations
 phone,object,observations
+open-source,object,observations
 platforms,object,observations
-universities,object,observations
+machinelearning,object,observations
+experience,object,observations
 database,object,observations
 hobbies,object,observations
 programming,object,observations
-experience,object,observations
 languages,object,observations
-open-source,object,observations
-machinelearning,object,observations
+universities,object,observations

@@ -1,4 +1,4 @@
-index;file_path;extension;text;candidate_name;email;phone;platforms;universities;database;hobbies;programming;experience;languages;open-source;machinelearning
+index;file_path;extension;text;candidate_name;email;phone;open-source;platforms;machinelearning;experience;database;hobbies;programming;languages;universities
 0;/home/rahul/Desktop/PESU/PESU-7THSEM/WT-2/project/emblaze/emblaze/emblaze/ResumeParser/data/input/example_resumes/resume.pdf;.pdf;"Jonathan Merrin
 Jmerrin@andrew.cmu.edu
 Cell: 917-612-1478
@@ -57,4 +57,4 @@ Introduction to Computer Systems (15-213)
 Independent Study in Computer Pedagogy (15-539)
 Concepts of Math
 
-";Jonathan Merrin;Jmerrin@andrew.cmu.edu;('917', '612', '1478');set();set();set();set();{'.NET', 'python', 'C', 'R', 'java', 'JavaScript'};{'developer', 'Teacher'};set();set();set()
+";Jonathan Merrin;Jmerrin@andrew.cmu.edu;('917', '612', '1478');set();set();set();{'developer', 'Teacher'};set();set();{'.NET', 'JavaScript', 'R', 'C', 'python', 'java'};set();set()
