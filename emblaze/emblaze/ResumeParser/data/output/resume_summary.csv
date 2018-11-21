@@ -1,60 +1,75 @@
-index;file_path;extension;text;candidate_name;email;phone;open-source;platforms;machinelearning;experience;database;hobbies;programming;languages;universities
-0;/home/rahul/Desktop/PESU/PESU-7THSEM/WT-2/project/emblaze/emblaze/emblaze/ResumeParser/data/input/example_resumes/resume.pdf;.pdf;"Jonathan Merrin
-Jmerrin@andrew.cmu.edu
-Cell: 917-612-1478
-Carnegie Mellon University, SMC 4415
-5032 Forbes Avenue, Pittsburgh, PA 15213
+index;file_path;extension;text;candidate_name;email;phone;languages;universities;hobbies;platforms;machinelearning;open-source;experience;programming;database
+0;/home/rahul/Desktop/PESU/PESU-7THSEM/WT-2/project/emblaze/emblaze/emblaze/ResumeParser/data/input/example_resumes/resume.pdf;.pdf;"Brendan Herger
 
-Education:
-Abraham Joshua Heschel High School (grad. 2013)
-Carnegie Mellon School of Computer Science (Class of 2018)
-Minor in Game Design
+Hergertarian.com | 13herger@gmail.com | + 1 (415) 582-7457
+1209 Page Street No. 7 San Francisco, Ca 94117
 
-Skills:
-Programming experience in SML, Java, C, Python, JavaScript, and Swift
-Recursion Aficionado
-Game Design and AI Programming
-First Responder/Ambulance Training
-Teaching/Tutoring
-Fluent in Hebrew
-Black Belt in Kenshikai Karate
+Selected Experience
+Data Scientist
+Data Innovation Lab @ Capital One (San Francisco, Ca.) 06/15 - Now
+Lead research team modeling for fraud problem space with class
+imbalance & adversaries; H2O.ai, GraphLab, SKLearn
+Deployed sub-millisecond real time model; Apache Apex
+Recommended distributed machine learning frameworks for general
+adoption at Capital One; H2O.ai, GraphLab, Apache Spark
 
-Work Experience:
-Backend developer on Shelf (May-July 2015)
-- Project video: http://bit.ly/1L3rKw3
-Volunteered at the Agahozo-Shalom Youth Village in Rwanda (March 2014-April 2014)
-- Helped teach MS Paint, Microsoft Office, Alice, and Scratch, and helped with various projects.
-Spent a year abroad in Israel, studying and volunteering
-- Volunteered with Magen David Adom as First Responder (January 2013-March 2013)
-Production Assistant on the independent film Sleepwalkers (Summer 2013)
-- http://sleepwalkersfilm.com/
-Upper Class Ambassador in Mudge House (Mentor for Freshman)
-Intern at the offices of Young Judaea (May 2013-June 2013)
+Various Technical Positions
+Lawfty (San Francisco, Ca.), RevUp Software (Redwood City, Ca.),
+Perkins + Will Architecture (San Francisco, Ca.) & Lawrence Berkeley
+National Lab. (Berkeley, Ca.)
 
-Projects:
-Programmed an Artificial Intelligence simulation, recipient of the following awards:
-- Naval Science Award
-- Intel: Excellence in Computer Science Award
-- Silver Medal in the category of Computer Science (NYCSEF)
-- (Sample video found at http://bit.ly/1c8Jq6I)
-Programmed an original recursive puzzle game
-- 15-112 Term project, Git: (http://bit.ly/1ifPP7d)
-Independent Study in developing assets to aid other CS classes (15-539 below)
-- Creating assets for computer science Classes at CMU (Made a recursion tutor: http://bit.ly/1LBdrOn)
-VP of Finances, Co-Founder, and Project Leader for Project Ignite
-- A project based outreach initiative to get high school students involved in a field of their choosing.
-On the board of Project Rwanda
-- A student group dedicated to finding sustainable improvements to Rwandan living conditions.
-Worked in the Planetary Robotics Lab at Carnegie Mellon (Freshman Spring)
-- User Interface and Localization Software teams for the Lunar Lander/Google LunarX Prize project
+Front End Supervisor
+The Home Depot Pro (Colma, Ca.)
+05/11 - 03/13
+Positions held: Cashier, Special Services Assoc., Tool Rental Assoc.
+Supervised and trained a staff of 10-30 team members
 
-Relevant Classes:
-Fundamentals of Computer Science (15-112) (Term project video: http://bit.ly/1zmHaEA)
-Great Theoretical Ideas of Computer Science (15-251)
-Imperative Computing (15-122)
-Principles of Functional Programming (15-150)
-Introduction to Computer Systems (15-213)
-Independent Study in Computer Pedagogy (15-539)
-Concepts of Math
+Personal Projects
+Identified genre of Billboard
+Hot 100 songs using ensemble
+algorithm built with Support
+Vector Machine, Neural Network,
+Stochastic Gradient Boost, and
+Random Forest algorithms;
+Python, Pandas, R and Scikit-Learn
+Implemented Naive Bayes text
+classification algorithm and trained
+this algorithm to correctly label
+83% of movie reviews; Python,
+numpy and Pandas
+Created database containing lyrics
+of Billboard Hot 100 songs since
+1958; R, Python, Pandas and
+Beautiful Soup 4
+Built a multi-threaded web scraper
+and search engine with web
+user interface; Java, MySQL and
+HTML5/CSS
 
-";Jonathan Merrin;Jmerrin@andrew.cmu.edu;('917', '612', '1478');set();set();set();{'developer', 'Teacher'};set();set();{'.NET', 'JavaScript', 'R', 'C', 'python', 'java'};set();set()
+Education
+MS, Analytics
+
+Built resume parsing package
+which extracts text, finds contact
+details, and checks for required
+keywords; Python and Pandas
+
+University of San Francisco, July 2015
+Relevant Coursework: Machine Learning, Adv. Machine Learning, Data
+Acquisition, Exploratory Data Analysis, Relational Databases, NoSQL
+Databases, Linear Regression Analysis, Time Series Analysis, Intro. SAS
+
+BS, Physics
+University of San Francisco, May 2014
+Minors: Computer Sciences, Mathematics
+Honors: University Scholar, President of ΠΜΕ Math Honors Society
+Relevant Coursework: Software Development, Data Structures &
+Algorithms, Differential Eqn.’s, Linear Algebra, Graduate Econometrics
+
+Online
+Hergertarian.com
+github.com/bjherger
+linkedin.com/in/bjherger
+hergertarian.wordpress.com/
+
+";Brendan Herger;13herger@gmail.com;('415', '582', '7457');set();{'Vrije Univesriteit'};set();{'Mac'};{'sklearn'};{'github'};{'developer'};{'C', '.NET', 'java', 'R', 'python'};{'SQL', 'MySQL'}
