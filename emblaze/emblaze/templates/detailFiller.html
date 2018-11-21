@@ -40,6 +40,8 @@
         <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
         <link rel="stylesheet" type="text/css" href= {{ url_for("static",filename="vendor/fontawesome/css/all.min.css") }} >
 
+        <!-- Bootstrap Slider CSS -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/css/bootstrap-slider.min.css">
     </head>
 
     <body>
@@ -54,18 +56,18 @@
                 </div>
                 <div class="form-group">
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Name" required="">
+                        <input type="text" class="form-control" placeholder="Name" required="" value="{{ firstName }}">
                     </div>
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Last Name" required="">
+                        <input type="text" class="form-control" placeholder="Last Name" required="" value="{{ lastName }}">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-grid-w3ls">
-                        <input type="email" class="form-control" placeholder="Email" required="">
+                        <input type="email" class="form-control" placeholder="Email" required="" value="{{ emailID }}" >
                     </div>
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Phone" required="">
+                        <input type="text" class="form-control" placeholder="Phone" required="" value="{{ phoneNO }}" >
                     </div>
                 </div>
                 <div class="form-group">
@@ -87,7 +89,7 @@
                         <input type="text" placeholder="State" required="">
                     </div>
                     <div class="form-mid-w3ls">
-                        <select class="form-control buttom">
+                        <select class="form-control bottom">
                             <option value="">Select Country
                             </option>
                             <option value="category2">Oman</option>
@@ -112,49 +114,56 @@
                 <div class="form-control-w3l">
                     <textarea name="Message" placeholder="About me..."></textarea>
                 </div>
+                
                 <div class="main-title">
                     <h3>Experience Details</h3>
                 </div>
-                <div class="form-group">
-                    <div class="form-mid-w3ls">
-                        <input type="text" class="form-control" placeholder="Company Name" required="">
+                {% for exp in experience %}
+                    <div class="form-group">
+                        <div class="form-mid-w3ls">
+                            <input type="text" class="form-control" placeholder="Name" required="">
+                        </div>
+                        <div class="form-mid-w3ls">
+                            <input type="text" class="form-control" placeholder="Position" required="" value="{{ exp }}">
+                        </div>
+                        <div class="form-mid-w3ls">
+                            <input type="text" class="form-control" placeholder="Time period" required="">
+                        </div>
                     </div>
-                    <div class="form-mid-w3ls">
-                        <input type="text" class="form-control" placeholder="Position" required="">
+                    <div class="form-control-w3l">
+                        <textarea name="Message" placeholder="Work Description..."></textarea>
                     </div>
-                    <div class="form-mid-w3ls">
-                        <input type="text" class="form-control" placeholder="Time period" required="">
-                    </div>
-                </div>
-                <div class="form-control-w3l">
-                    <textarea name="Message" placeholder="Work Description..."></textarea>
-                </div>
+                {% endfor %}
 
                 <div class="main-title">
                     <h3>Education Details</h3>
                 </div>
-                <div class="form-group">
-                    <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Degree" required="">
+                {% for univ in universities %}
+                    <div class="form-group">
+                        <div class="form-grid-w3ls">
+                            <input type="text" class="form-control" placeholder="Degree" required="">
+                        </div>
+                        <div class="form-grid-w3ls">
+                            <input type="text" class="form-control" placeholder="Details" required="" value="{{ univ }}">
+                        </div>
                     </div>
-                    <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Time period" required="">
-                    </div>
-                </div>
-                <div class="form-control-w3l">
-                    <textarea name="Message" placeholder="Education description..."></textarea>
-                </div>
+                {% endfor %}
+
                 <div class="main-title">
                     <h3>Skills</h3>
                 </div>
-                <div class="form-group">
-                    <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Skill Name" required="">
+                {% for skill in skills %}
+                    <div class="form-group">
+                        <div class="form-grid-w3ls">
+                            <input type="text" class="form-control" placeholder="Skill Name" required="" value="{{ skill }}">
+                        </div>
+                        <div class="form-grid-w3ls">
+                            <!-- <input type="text" class="form-control" placeholder="Level 0 - 100" required=""> -->
+                            <input class="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1"/>
+                            <span class="sliderVal">3</span>
+                        </div>
                     </div>
-                    <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Level 0 - 100" required="">
-                    </div>
-                </div>
+                {% endfor %}
                 <div class="form-control-w3l">
                     <textarea name="Message" placeholder="Knowledge description..."></textarea>
                 </div>
@@ -241,7 +250,10 @@
         <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script> -->
 
         <script src= {{ url_for("static",filename="vendor/bootstrap/js/bootstrap.min.js") }} ></script>
-        <!-- //Calendar -->
+        <!-- Custom JS -->
+        <script src= {{ url_for("static",filename="js/detailFiller.js") }} ></script>
+        <!-- Bootstrap Slider JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.2.3/bootstrap-slider.min.js"></script>
     </body>
 
 </html>
