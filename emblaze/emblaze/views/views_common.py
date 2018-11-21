@@ -19,7 +19,7 @@ app.secret_key = 'secretkeyhereplease'
 # Rahul's
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index-chiggy.html")
 
 def allowedFile(filename):
     return '.' in filename and \
