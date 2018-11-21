@@ -39,7 +39,7 @@ def viewUploadedFile(filename):
     return redirect("http://localhost:8080")
 
 @app.route('/uploader', methods=['GET', 'POST'])
-def uploadFile():
+def uploadPDF():
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
