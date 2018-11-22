@@ -1,0 +1,12 @@
+-- candidate_name 	(name->first,middle,last)
+-- email				(contact->email)
+-- phone				(contact->phone)
+languages
+-- universities		(education)
+-- hobbies			(hobbies)
+-- platforms		(skills)
+-- machinelearning	(skills)
+- open-source		(projects)
+-- experience		(experience)
+-- programming		(skills)
+-- database			(skills)
