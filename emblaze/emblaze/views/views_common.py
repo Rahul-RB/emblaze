@@ -70,9 +70,9 @@ def viewUploadedFile(filename):
     print("df['universities'][0]:",df["universities"][0])
 
     try:
-        skill           = list(ast.literal_eval(df["programming"][0]))
+        programming     = list(ast.literal_eval(df["programming"][0]))
     except Exception as e:
-        skill = list(df["programming"][0])    
+        programming = list(df["programming"][0])    
         
     try:
         languages       = list(ast.literal_eval(df["languages"][0]))
@@ -113,17 +113,52 @@ def viewUploadedFile(filename):
         universities    = list(ast.literal_eval(df["universities"][0]))
     except Exception as e:
         universities = list(df["universities"][0])    
-        
-
-
+    
+    if(programming == ['s', 'e', 't', '(', ')']):
+        programming = [""]
+    if(languages == ['s', 'e', 't', '(', ')']):
+        languages = [""]
+    if(platforms == ['s', 'e', 't', '(', ')']):
+        platforms = [""]
+    if(experience == ['s', 'e', 't', '(', ')']):
+        experience = [""]
+    if(database == ['s', 'e', 't', '(', ')']):
+        database = [""]
+    if(openSource == ['s', 'e', 't', '(', ')']):
+        openSource = [""]
+    if(hobbies == ['s', 'e', 't', '(', ')']):
+        hobbies = [""]
+    if(machinelearning == ['s', 'e', 't', '(', ')']):
+        machinelearning = [""]
+    if(universities == ['s', 'e', 't', '(', ')']):
+        universities = [""]
+    print("programming:",programming)
+    print("languages:",languages)
+    print("platforms:",platforms)
+    print("experience:",experience)
+    print("database:",database)
+    print("openSource:",openSource)
+    print("hobbies:",hobbies)
+    print("machinelearning:",machinelearning)
+    print("universities:",universities)
+# - platforms         (skills)
+# - machinelearning   (skills)
+# - database          (skills)
+    skill = programming + platforms + machinelearning + database
+# hobbies:
+# - name: Video Games
+#   iconClass: fa fa-gamepad
+#   url: https://example.com
     return render_template("detailFiller.html",
                             firstName=firstName,
                             lastName=lastName,
                             emailID=df["email"][0],
                             phoneNO=df["phone"][0],
-                            skills=skill,
                             experience=experience,
-                            universities=universities
+                            universities=universities,
+                            skills=skill,
+                            hobbies=hobbies,
+                            openSource=openSource
                         )
 
 @app.route('/uploader', methods=['GET', 'POST'])

@@ -7,7 +7,7 @@ $(document).ready(function() {
 			}
 		});
 		$(this).on("slide", function(slideEvt) {
-			console.log($(this).siblings('.sliderVal'));
+			// console.log($(this).siblings('.sliderVal'));
 			$(this).siblings('.sliderVal').text(slideEvt.value);
 		});
 	});
