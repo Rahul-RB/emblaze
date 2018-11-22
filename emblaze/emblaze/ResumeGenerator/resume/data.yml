@@ -39,6 +39,10 @@ education:
   timeperiod: March 2009 - December 2011
   description: Major in Engineering, University B, Los Angeles, USA.
 
+- degree: Bachelor of Technology
+  timeperiod: December 2011 - June 2018
+  description: Major in Engineering, University B, Los Angeles, USA.
+
 # skill level goes 0 to 100
 skills:
 - name: HTML5
@@ -56,7 +60,7 @@ skills:
 - name: ES.Next
   level: 70
 - name: Docker
-  level: 99
+  level: 1000
 knowledge: Also proficient in Adobe Photoshop and Illustrator, grew up bilingual
   (English and Klingon).
 
@@ -73,7 +77,7 @@ hobbies:
 
 - name: Drawing
   iconClass: fa fa-pencil
-  url: https://example.com
+  url: https://example.co.in
 
 contributions:
 - name: best-resume-ever
