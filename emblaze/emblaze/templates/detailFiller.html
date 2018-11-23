@@ -360,7 +360,10 @@
                 {% for exp in experience %}
                     <div class="form-group">
                         <div class="form-mid-w3ls">
-                            <input type="text" class="form-control" placeholder="Company Name" name="expCompName" required="">
+                            <input type="text" class="form-control companySearch" placeholder="Company Name" name="expCompName" required="">
+                            <div class="companySearchResults">
+                                
+                            </div>                            
                         </div>
                         <div class="form-mid-w3ls">
                             <input type="text" class="form-control" placeholder="Position" name="expCompPos" value="{{ exp }}" required="">
@@ -370,7 +373,7 @@
                         </div>
                     </div>
                     <div class="form-control-w3l">
-                        <input type="text" placeholder="Website" name="expCompSite">
+                        <input type="text" class="form form-control" style="margin-bottom: 10px;" placeholder="Website" name="expCompSite">
                     </div>
                     <div class="form-control-w3l">
                         <textarea placeholder="Work Description..." name="expCompDescr"></textarea>
@@ -393,7 +396,7 @@
                         </div>
                     </div>
                     <div class="form-control-w3l">
-                        <input type="text" placeholder="Website" name="eduSite">
+                        <input type="text" class="form form-control" placeholder="Website" name="eduSite">
                     </div>
                 {% endfor %}
 
