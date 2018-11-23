@@ -2,6 +2,8 @@ import subprocess
 from emblaze import app
 
 from emblaze.models import models_common 
+from emblaze.views import dictToYaml
+from emblaze.views import writeToYaml
 
 from flask import Flask,render_template,redirect,url_for,flash, redirect, request, session, abort, jsonify, Response
 from werkzeug import secure_filename
@@ -15,7 +17,6 @@ import datetime
 import time
 import pandas as pd
 import ast
-import yaml
 
 app.secret_key = 'secretkeyhereplease'
 
@@ -40,7 +41,6 @@ nameList = [
     "pinCode",
     "state",
     "countries",
-    "text",
     "dateOfBirth",
     "placeOfBirth",
     "Message",
@@ -48,10 +48,12 @@ nameList = [
     "expCompName",
     "expCompPos",
     "expCompTime",
+    "expCompSite",
     "Message",
     "expCompDescr",
     "eduDegree",
     "eduDetails",
+    "eduSite",
     "eduTime",
     "skillName",
     "skillVal",
@@ -74,8 +76,13 @@ def detailsToYaml():
     if(request.method == "POST"):
         nameValueList = {}
         for name in nameList:
+            if(name=="dateOfBirth"):
+                nameValueList[name] = datetime.datetime.strptime(request.form.getlist(name)[0], "%Y-%m-%d")
+                continue
             nameValueList[name] = request.form.getlist(name)
         print(nameValueList)
+        res = dictToYaml.dictToYaml(nameValueList)
+        writeToYaml.writeToYaml(res)
     return render_template("detailFiller.html")
 
 
@@ -225,3 +232,10 @@ def uploadPDF():
             return redirect(url_for('viewUploadedFile',
                                     filename=filename))
     flash("Error")
+
+
+@app.route("/testDate",methods=["GET","POST"])
+def testDate():
+    if request.method == "POST":
+        print("request.form.get('date'):",request.form.get("date"))
+    return render_template("testDate.html")
