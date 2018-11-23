@@ -116,6 +116,11 @@
                                 <input class="form" type="file" name="file"><br>
                                 <input class="secondary-button" type="submit" value="Upload">
                             </form><br>
+                            <p class="lead">Put a good Display Picture here</p>
+                            <form method="post" action={{ url_for("uploadImage") }} enctype="multipart/form-data">
+                                <input class="form" type="file" name="file"><br>
+                                <input class="secondary-button" type="submit" value="Upload">
+                            </form><br>
                             <p class="lead">Or click below to start right away!</p>
                             <a href = {{ url_for("detailFiller") }} class="secondary-button">Let's go!</a>
                         </div>

@@ -16,6 +16,7 @@
             function hideURLbar() {
                 window.scrollTo(0, 1);
             }
+            
         </script>
         <!-- Meta tags -->
         <!-- Calendar -->
@@ -46,7 +47,27 @@
     <body>
         <h1 class="header-w3ls">
              Resume Details 
-          </h1>
+        </h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-2">
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-8"  style="background-color: #FFFFFF; box-shadow: -2px 7px 37px 8px rgba(0,0,0,0.52); margin-bottom: 50px">
+                    <div style="font-size: 24px">
+                        {% if text %}
+                            Here's some text to make the copy paste easier!
+                        {% endif %}
+                    </div>
+                    <div style="">
+                        {% if text %}
+                            {{ text }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-2 col-2">
+                </div>
+            </div>
+        </div>
         <!-- multistep form -->
         <div class="main-bothside">
             <form action="detailsToYaml" method="POST">
