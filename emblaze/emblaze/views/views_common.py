@@ -304,3 +304,12 @@ def getClientContents():
         "content":res
     }
     return jsonify(res)
+
+
+@app.route("/getInfo")
+def getInfo():
+    infoType = request.args.get("infoType","",type=str)
+    search = request.args.get("search","",type=str)
+    res = models_common.getInfo(infoType,search)
+
+    return jsonify(res)

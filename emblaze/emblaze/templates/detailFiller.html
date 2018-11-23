@@ -77,7 +77,10 @@
                         <input type="text" placeholder="Street" name="street" required="">
                     </div>
                     <div class="form-mid-w3ls">
-                        <input type="text" placeholder="City" name="city" required="">
+                        <input type="text" class="citySearch" placeholder="City" name="city" required="">
+                        <div class="searchResults">
+                            
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -85,7 +88,10 @@
                         <input type="text" placeholder="Pin Code" name="pinCode" required="">
                     </div>
                     <div class="form-mid-w3ls">
-                        <input type="text" placeholder="State" name="state" required="">
+                        <input type="text" class="stateSearch" placeholder="State" name="state" required="">
+                        <div class="stateSearchResults">
+                            
+                        </div>                        
                     </div>
                     <div class="form-mid-w3ls">
                         <select class="form form-control" name="countries">
@@ -341,7 +347,7 @@
                     </div>
                     <div class="form-grid-w3ls">
                         <label for="placeOfBirth">Place of Birth:</label>
-                        <input type="text" id="placeOfBirth" class="form-control" placeholder="Birth Location" name="placeOfBirth" required="">
+                        <input type="text" id="placeOfBirth" class="form-control citySearch" placeholder="Birth Location" name="placeOfBirth" required="">
                     </div>
                 </div>
                 <div class="form-control-w3l">
