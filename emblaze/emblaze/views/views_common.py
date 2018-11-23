@@ -83,7 +83,7 @@ def detailsToYaml():
         print(nameValueList)
         res = dictToYaml.dictToYaml(nameValueList)
         writeToYaml.writeToYaml(res)
-    return render_template("detailFiller.html")
+    return redirect("http://localhost:8080/")
 
 
 def allowedFile(filename):
