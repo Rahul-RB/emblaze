@@ -232,10 +232,3 @@ def uploadPDF():
             return redirect(url_for('viewUploadedFile',
                                     filename=filename))
     flash("Error")
-
-
-@app.route("/testDate",methods=["GET","POST"])
-def testDate():
-    if request.method == "POST":
-        print("request.form.get('date'):",request.form.get("date"))
-    return render_template("testDate.html")
