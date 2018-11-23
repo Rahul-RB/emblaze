@@ -10,7 +10,8 @@
 
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
-
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href={{ url_for("static",filename="img/logo.jpg") }}>
         <!-- Bootstrap -->
         <link type="text/css" rel="stylesheet" href = {{ url_for("static",filename="css/bootstrap.min.css") }}>
 
@@ -27,7 +28,7 @@
         <!-- Font Awesome Icon -->
         <link rel="stylesheet" href = {{ url_for("static",filename="css/font-awesome.min.css") }}>
 
-        <!-- Custom stlylesheet -->
+        <!-- Custom stylesheet -->
         <link type="text/css" rel="stylesheet" href = {{ url_for("static",filename="css/style.css") }}>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -108,7 +109,7 @@
                     <div class="row">
 
                         <!-- home content -->
-                        <div class="col-md-10 col-md-offset-1">
+                        <div class="col-md-10 col-md-offset-1" id="mainText">
                             <h1>We Build Your Resume</h1>
                             <p class="lead">Upload your lifeless Resume below</p>
                             <form method="post" action={{ url_for("uploadPDF") }} enctype="multipart/form-data">
@@ -373,6 +374,7 @@
         <script type="text/javascript" src = {{ url_for("static",filename="js/owl.carousel.min.js") }}></script>
         <script type="text/javascript" src = {{ url_for("static",filename="js/jquery.magnific-popup.js") }}></script>
         <script type="text/javascript" src = {{ url_for("static",filename="js/main.js") }}></script>
+        <script type="text/javascript" src = {{ url_for("static",filename="js/index.js") }}></script>
 
     </body>
 </html>
