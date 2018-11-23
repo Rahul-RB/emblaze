@@ -1,53 +1,59 @@
 /* #*/ export const PERSON = `
-about: I'm what I've become! Hire meeee
+about: Hi, my name is John Doe. I"m just about the most boring type of person you
+  could possibly imagine. I like collecting leaves from the tree in my back yard and
+  documenting each time I eat a peanut that is non-uniform. I am not a robot. Please
+  hire me.
 birth:
-  location: Mumbai
+  location: Bangalore
   year: 1997
 contact:
-  city: Mumbai India
+  city: New Ritafort India
   email: 13herger@gmail.com
-  github: githu.bom
+  github: brendanHG
   phone: '4155827457'
-  street: Caesar Road
-  website: www.rahul.com
+  street: B 1001, The Gulmohar Apartments,Ceasar Road,Beside Filmalaya Studio, Amboli,
+    Andheri(West)
+  website: www.brendan.com
 education:
 - degree: BTech
   description: Vrije Univesriteit
-  timeperiod: June 2012 - July 2014
-  website: www.pulsesecure.net
+  timeperiod: June 2012-July 2015
+  website: www.vrije.com
 experience:
-- company: Pulse Secure
-  description: Did some work I guess
+- company: 'Larkin, Gleason and '
+  description: Making coffee and baking cookies.
   position: developer
-  timeperiod: June 2015 - July 2015
-  website: www.google.com
+  timeperiod: June 2015-July 2017
+  website: www.larkin.com
 hobbies:
 - iconClass: fa fa-gamepad
-  name: Hobby1
-  url: hobbyurl1.com
-knowledge: Some description
+  name: Video Games
+  url: https://example.com
+knowledge: Also proficient in Adobe Photoshop and Illustrator, grew up bilingual (English
+  and Klingon).
 lang: en
 name:
   first: Brendan
   last: Herger
-  middle: 'null'
+  middle: ''
 position: Software Developer
 projects:
-- description: Project Description
-  name: Proj1
+- description: "\U0001F454 \U0001F4BC Build fast \U0001F680 and easy multiple beautiful\
+    \ resumes and create your best CV ever! Made with Vue and LESS."
+  name: best-resume-ever
   platform: github
-  url: projurl.com
+  url: https://github.com/salomonelli/best-resume-ever
 skills:
-- level: 5
-  name: .NET
-- level: 5
-  name: R
-- level: 5
-  name: java
 - level: 5
   name: C
 - level: 5
+  name: R
+- level: 5
   name: python
+- level: 5
+  name: .NET
+- level: 5
+  name: java
 - level: 5
   name: Mac
 - level: 5
