@@ -15,6 +15,7 @@ import datetime
 import time
 import pandas as pd
 import ast
+import yaml
 
 app.secret_key = 'secretkeyhereplease'
 
@@ -28,11 +29,61 @@ def detailFiller():
     # return render_template("detailFiller.html")
     return render_template("detailFiller.html")
 
+nameList = [
+    "firstName",
+    "lastName",
+    "emailID",
+    "phoneNO",
+    "address",
+    "street",
+    "city",
+    "pinCode",
+    "state",
+    "countries",
+    "text",
+    "dateOfBirth",
+    "placeOfBirth",
+    "Message",
+    "aboutMe",
+    "expCompName",
+    "expCompPos",
+    "expCompTime",
+    "Message",
+    "expCompDescr",
+    "eduDegree",
+    "eduDetails",
+    "eduTime",
+    "skillName",
+    "skillVal",
+    "otherNotes",
+    "projName",
+    "projURL",
+    "projPlatform",
+    "projDescr",
+    "hobbyName",
+    "hobbyURL",
+    "contactStreet",
+    "contactCity",
+    "contactWebsite",
+    "contactGithubLink"
+]
+
+@app.route("/detailsToYaml",methods=["GET","POST"])
+def detailsToYaml():
+    # return render_template("detailsToYaml.html")
+    if(request.method == "POST"):
+        nameValueList = {}
+        for name in nameList:
+            nameValueList[name] = request.form.getlist(name)
+        print(nameValueList)
+    return render_template("detailFiller.html")
+
+
 def allowedFile(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in app.config["ALLOWED_EXTENSIONS"]
 
-@app.route('/uploads/<filename>')
+@app.route('/<filename>')
 def viewUploadedFile(filename):
     parser.main()
 
@@ -141,14 +192,8 @@ def viewUploadedFile(filename):
     print("hobbies:",hobbies)
     print("machinelearning:",machinelearning)
     print("universities:",universities)
-# - platforms         (skills)
-# - machinelearning   (skills)
-# - database          (skills)
     skill = programming + platforms + machinelearning + database
-# hobbies:
-# - name: Video Games
-#   iconClass: fa fa-gamepad
-#   url: https://example.com
+
     return render_template("detailFiller.html",
                             firstName=firstName,
                             lastName=lastName,

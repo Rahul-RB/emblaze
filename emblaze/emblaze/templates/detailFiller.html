@@ -45,47 +45,47 @@
 
     <body>
         <h1 class="header-w3ls">
-             Resume Registration Form 
+             Resume Details 
           </h1>
         <!-- multistep form -->
         <div class="main-bothside">
-            <form action="" method="post">
+            <form action="detailsToYaml" method="POST">
                 <div class="main-title">
-                    <h2> Client Details</h2>
+                    <h2> Personal Details</h2>
                 </div>
                 <div class="form-group">
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Name" required="" value="{{ firstName }}">
+                        <input type="text" class="form-control" placeholder="Name" required="" name="firstName" value="{{ firstName }}">
                     </div>
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Last Name" required="" value="{{ lastName }}">
+                        <input type="text" class="form-control" placeholder="Last Name" required="" name="lastName" value="{{ lastName }}">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-grid-w3ls">
-                        <input type="email" class="form-control" placeholder="Email" required="" value="{{ emailID }}" >
+                        <input type="email" class="form-control" placeholder="Email" required="" name="emailID" value="{{ emailID }}" >
                     </div>
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Phone" required="" value="{{ phoneNO }}" >
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-mid-w3ls">
-                        <input type="text" placeholder="Address" required="">
-                    </div>
-                    <div class="form-mid-w3ls">
-                        <input type="text" placeholder="Street" required="">
-                    </div>
-                    <div class="form-mid-w3ls">
-                        <input type="text" placeholder="City" required="">
+                        <input type="text" class="form-control" placeholder="Phone" required="" name="phoneNO" value="{{ phoneNO }}" >
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-mid-w3ls">
-                        <input type="text" placeholder="Pin Code" required="">
+                        <input type="text" placeholder="Address" name="address" required="">
                     </div>
                     <div class="form-mid-w3ls">
-                        <input type="text" placeholder="State" required="">
+                        <input type="text" placeholder="Street" name="street" required="">
+                    </div>
+                    <div class="form-mid-w3ls">
+                        <input type="text" placeholder="City" name="city" required="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-mid-w3ls">
+                        <input type="text" placeholder="Pin Code" name="pinCode" required="">
+                    </div>
+                    <div class="form-mid-w3ls">
+                        <input type="text" placeholder="State" name="state" required="">
                     </div>
                     <div class="form-mid-w3ls">
                         <select class="form form-control" name="countries">
@@ -330,19 +330,22 @@
                             <option value="Yemen">Yemen</option> 
                             <option value="Zambia">Zambia</option> 
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>                    </div>
+                        </select>
+                    </div>
 
                 </div>
                 <div class="form-group">
                     <div class="form-grid-w3ls">
-                        <input name="text" type="date" placeholder="DoB" required="">
+                        <label for="dob">Date of Birth:</label>
+                        <input name="text" id="dob" class="form-control" type="date" placeholder="DoB" name="dateOfBirth" required="">
                     </div>
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Birth Location" required="">
+                        <label for="placeOfBirth">Place of Birth:</label>
+                        <input type="text" id="placeOfBirth" class="form-control" placeholder="Birth Location" name="placeOfBirth" required="">
                     </div>
                 </div>
                 <div class="form-control-w3l">
-                    <textarea name="Message" placeholder="About me..."></textarea>
+                    <textarea name="Message" placeholder="About me..." name="aboutMe"></textarea>
                 </div>
                 
                 <div class="main-title">
@@ -351,17 +354,17 @@
                 {% for exp in experience %}
                     <div class="form-group">
                         <div class="form-mid-w3ls">
-                            <input type="text" class="form-control" placeholder="Name" required="">
+                            <input type="text" class="form-control" placeholder="Company Name" name="expCompName" required="">
                         </div>
                         <div class="form-mid-w3ls">
-                            <input type="text" class="form-control" placeholder="Position" required="" value="{{ exp }}">
+                            <input type="text" class="form-control" placeholder="Position" name="expCompPos" value="{{ exp }}" required="">
                         </div>
                         <div class="form-mid-w3ls">
-                            <input type="text" class="form-control" placeholder="Time period" required="">
+                            <input type="text" class="form-control" placeholder="Time period" name="expCompTime" required="">
                         </div>
                     </div>
                     <div class="form-control-w3l">
-                        <textarea name="Message" placeholder="Work Description..."></textarea>
+                        <textarea name="Message" placeholder="Work Description..." name="expCompDescr"></textarea>
                     </div>
                 {% endfor %}
 
@@ -370,11 +373,14 @@
                 </div>
                 {% for univ in universities %}
                     <div class="form-group">
-                        <div class="form-grid-w3ls">
-                            <input type="text" class="form-control" placeholder="Degree" required="">
+                        <div class="form-mid-w3ls">
+                            <input type="text" class="form-control" placeholder="Degree" name="eduDegree" required="">
                         </div>
-                        <div class="form-grid-w3ls">
-                            <input type="text" class="form-control" placeholder="Details" required="" value="{{ univ }}">
+                        <div class="form-mid-w3ls">
+                            <input type="text" class="form-control" placeholder="Details" name="eduDetails" value="{{ univ }}" required="">
+                        </div>
+                        <div class="form-mid-w3ls">
+                            <input type="text" class="form-control" placeholder="Time period" name="eduTime" required="">
                         </div>
                     </div>
                 {% endfor %}
@@ -386,38 +392,39 @@
                 {% for skill in skills %}
                     <div class="form-group">
                         <div class="form-grid-w3ls">
-                            <input type="text" class="form-control" placeholder="Skill Name" required="" value="{{ skill }}">
+                            <input type="text" class="form-control" placeholder="Skill Name" name="skillName" value="{{ skill }}" required="">
                         </div>
                         <div class="form-grid-w3ls">
                             <!-- <input type="text" class="form-control" placeholder="Level 0 - 100" required=""> -->
-                            <input class="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1"/>
-                            <span class="sliderVal">3</span>
+                            <input class="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" name="skillVal1"/>
+                            <span class="sliderVal"></span>
                         </div>
                     </div>
                 {% endfor %}
 
                 <div class="form-control-w3l">
-                    <textarea name="Message" placeholder="Knowledge description..."></textarea>
+                    <textarea name="otherNotes" placeholder="Knowledge description..."></textarea>
                 </div>
                 <div class="main-title">
                     <h3>Projects</h3>
                 </div>
                 {% for source in openSource %}
-                <div class="form-group">
-                    <div class="form-mid-w3ls">
-                        <input type="text" class="form-control" placeholder="Project Name" required="">
+                    <div class="form-group">
+                        <div class="form-mid-w3ls">
+                            <input type="text" class="form-control" placeholder="Project Name" name="projName" required="">
+                        </div>
+                        <div class="form-mid-w3ls">
+                            <input type="text" class="form-control" placeholder="Project URL" name="projURL" required="">
+                        </div>
+                        <div class="form-mid-w3ls">
+                            <input type="text" class="form-control" placeholder="Platform" name="projPlatform" required="" value="{{ source }}">
+                        </div>
                     </div>
-                    <div class="form-mid-w3ls">
-                        <input type="text" class="form-control" placeholder="Project URL" required="">
+                    <div class="form-control-w3l">
+                        <textarea placeholder="Project description..." name="projDescr" ></textarea>
                     </div>
-                    <div class="form-mid-w3ls">
-                        <input type="text" class="form-control" placeholder="Platform" required="" value="{{ source }}">
-                    </div>
-                </div>
                 {% endfor %}
-                <div class="form-control-w3l">
-                    <textarea name="Message" placeholder="Project description..."></textarea>
-                </div>
+                
                 <div class="main-title">
                     <h3>Hobbies</h3>
                 </div>
@@ -425,10 +432,10 @@
                 {% for hobby in hobbies %}
                 <div class="form-group">
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Hobby Name" required="" value="{{ hobby }}">
+                        <input type="text" class="form-control" placeholder="Hobby Name" name="hobbyName" value="{{ hobby }}" required="">
                     </div>
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="URL" required="">
+                        <input type="text" class="form-control" placeholder="URL" name="hobbyURL" required="">
                     </div>
                 </div>
                 {% endfor %}
@@ -438,22 +445,22 @@
                 </div>
                 <div class="form-group">
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Street" required="">
+                        <input type="text" class="form-control" placeholder="Street" name="contactStreet" required="">
                     </div>
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="City" required="">
+                        <input type="text" class="form-control" placeholder="City" name="contactCity" required="">
                     </div>
 
                 </div>
                 <div class="form-group">
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Website" required="">
+                        <input type="text" class="form-control" placeholder="Website" name="contactWebsite" required="">
                     </div>
                     <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Github Link" required="">
+                        <input type="text" class="form-control" placeholder="Github Link" name="contactGithubLink" required="">
                     </div>
                 </div>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="form">
             </form>
         </div>
         <!-- js -->

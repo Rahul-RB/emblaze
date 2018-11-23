@@ -1,4 +1,4 @@
-index;file_path;extension;text;candidate_name;email;phone;database;open-source;platforms;programming;universities;experience;machinelearning;languages;hobbies
+index;file_path;extension;text;candidate_name;email;phone;experience;open-source;universities;database;hobbies;machinelearning;languages;programming;platforms
 0;/home/rahul/Desktop/PESU/PESU-7THSEM/WT-2/project/emblaze/emblaze/emblaze/ResumeParser/data/input/example_resumes/resume.pdf;.pdf;"Brendan Herger
 
 Hergertarian.com | 13herger@gmail.com | + 1 (415) 582-7457
@@ -72,4 +72,4 @@ github.com/bjherger
 linkedin.com/in/bjherger
 hergertarian.wordpress.com/
 
-";Brendan Herger;13herger@gmail.com;('415', '582', '7457');{'MySQL', 'SQL'};{'github'};{'Mac'};{'R', 'java', '.NET', 'python', 'C'};{'Vrije Univesriteit'};{'developer'};{'sklearn'};set();set()
+";Brendan Herger;13herger@gmail.com;('415', '582', '7457');{'developer'};{'github'};{'Vrije Univesriteit'};{'SQL', 'MySQL'};set();{'sklearn'};set();{'.NET', 'python', 'C', 'java', 'R'};{'Mac'}
