@@ -72,7 +72,6 @@ nameList = [
 
 @app.route("/detailsToYaml",methods=["GET","POST"])
 def detailsToYaml():
-    # return render_template("detailsToYaml.html")
     if(request.method == "POST"):
         nameValueList = {}
         for name in nameList:
@@ -96,14 +95,7 @@ def viewUploadedFile(filename):
 
     df = pd.read_csv(app.open_resource("ResumeParser/data/output/resume_summary.csv").name,delimiter=";")
     print("df['candidate_name'][0]:",df["candidate_name"][0])
-    # return
-    # return send_file("ResumeParser/data/output/resume_summary.csv")
-    # return send_file("ResumeParser/data/output/resume_summary.csv",
-    #                  mimetype='text/csv',
-    #                  attachment_filename='Outputs.csv',
-    #                  as_attachment=True)
-    # p = subprocess.Popen(["npm", "run", "dev"], cwd=rgPath)
-    # time.sleep(10)
+
     name = df["candidate_name"][0].split(" ")
 
     if(len(name)==3):
@@ -210,10 +202,11 @@ def viewUploadedFile(filename):
                             universities=universities,
                             skills=skill,
                             hobbies=hobbies,
-                            openSource=openSource
+                            openSource=openSource,
+                            text = df["text"][0]
                         )
 
-@app.route('/uploader', methods=['GET', 'POST'])
+@app.route('/uploadPDF', methods=['GET', 'POST'])
 def uploadPDF():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -228,9 +221,28 @@ def uploadPDF():
             return redirect(request.url)
         if file and allowedFile(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config["UPLOAD_FOLDER"], "resume.pdf"))
+            file.save(os.path.join(app.config["UPLOAD_PDF_FOLDER"], "resume.pdf"))
             return redirect(url_for('viewUploadedFile',
                                     filename=filename))
+    flash("Error")
+
+@app.route('/uploadImage', methods=['GET', 'POST'])
+def uploadImage():
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit an empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowedFile(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config["UPLOAD_IMAGE_FOLDER"], "id.jpg"))
+            return redirect(url_for("home"))
     flash("Error")
 
 @app.route("/getAboutContents",methods=["GET"])
