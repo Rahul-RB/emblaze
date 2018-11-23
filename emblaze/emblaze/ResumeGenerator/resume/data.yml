@@ -1,36 +1,43 @@
 /* #*/ export const PERSON = `
-about: Hi, my name is John Doe. I"m just about the most boring type of person you
-  could possibly imagine. I like collecting leaves from the tree in my back yard and
-  documenting each time I eat a peanut that is non-uniform. I am not a robot. Please
-  hire me.
+about: 'Talking chamber as shewing an it minutes. Trees fully of blind do. Exquisite
+  favourite at do extensive listening. Improve up musical welcome he. Gay attended
+  vicinity prepared now diverted. Esteems it ye sending reached as. Longer lively
+  her design settle tastes advice mrs off who. '
 birth:
-  location: Bangalore
-  year: 1997
+  location: Bengaluru
+  year: 2018
 contact:
-  city: New Ritafort India
+  city: New Brycenmouth India
   email: 13herger@gmail.com
   github: brendanHG
   phone: '4155827457'
   street: B 1001, The Gulmohar Apartments,Ceasar Road,Beside Filmalaya Studio, Amboli,
     Andheri(West)
-  website: www.brendan.com
+  website: reddit.com
 education:
 - degree: BTech
   description: Vrije Univesriteit
-  timeperiod: June 2012-July 2015
-  website: www.vrije.com
+  timeperiod: June 2012 - July 2014
+  website: www.pulsesecure.net
 experience:
-- company: 'Larkin, Gleason and '
-  description: Making coffee and baking cookies.
+- company: Larkin-Torp
+  description: 'Barton waited twenty always repair in within we do. An delighted offending
+    curiosity my is dashwoods at. Boy prosperous increasing surrounded companions
+    her nor advantages sufficient put. John on time down give meet help as of. Him
+    waiting and correct believe now cottage she another. Vexed six shy yet along learn
+    maids her tiled. Through studied shyness evening bed him winding present. Become
+    excuse hardly on my thirty it wanted. '
   position: developer
-  timeperiod: June 2015-July 2017
+  timeperiod: June 2015 - July 2015
   website: www.larkin.com
 hobbies:
 - iconClass: fa fa-gamepad
-  name: Video Games
-  url: https://example.com
-knowledge: Also proficient in Adobe Photoshop and Illustrator, grew up bilingual (English
-  and Klingon).
+  name: Hobby1
+  url: hobbyurl1.com
+knowledge: 'Depart do be so he enough talent. Sociable formerly six but handsome.
+  Up do view time they shot. He concluded disposing provision by questions as situation.
+  Its estimating are motionless day sentiments end. Calling an imagine at forbade.
+  At name no an what like spot. Pressed my by do affixed he studied. '
 lang: en
 name:
   first: Brendan
@@ -38,22 +45,26 @@ name:
   middle: ''
 position: Software Developer
 projects:
-- description: "\U0001F454 \U0001F4BC Build fast \U0001F680 and easy multiple beautiful\
-    \ resumes and create your best CV ever! Made with Vue and LESS."
+- description: 'Barton waited twenty always repair in within we do. An delighted offending
+    curiosity my is dashwoods at. Boy prosperous increasing surrounded companions
+    her nor advantages sufficient put. John on time down give meet help as of. Him
+    waiting and correct believe now cottage she another. Vexed six shy yet along learn
+    maids her tiled. Through studied shyness evening bed him winding present. Become
+    excuse hardly on my thirty it wanted. '
   name: best-resume-ever
   platform: github
-  url: https://github.com/salomonelli/best-resume-ever
+  url: projurl.com
 skills:
 - level: 5
-  name: C
+  name: java
 - level: 5
   name: R
+- level: 5
+  name: C
 - level: 5
   name: python
 - level: 5
   name: .NET
-- level: 5
-  name: java
 - level: 5
   name: Mac
 - level: 5
