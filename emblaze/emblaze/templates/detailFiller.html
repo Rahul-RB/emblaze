@@ -337,7 +337,7 @@
                 <div class="form-group">
                     <div class="form-grid-w3ls">
                         <label for="dob">Date of Birth:</label>
-                        <input name="text" id="dob" class="form-control" type="date" placeholder="DoB" name="dateOfBirth" required="">
+                        <input id="dob" class="form-control" type="date" name="dateOfBirth" required="">
                     </div>
                     <div class="form-grid-w3ls">
                         <label for="placeOfBirth">Place of Birth:</label>
@@ -345,7 +345,7 @@
                     </div>
                 </div>
                 <div class="form-control-w3l">
-                    <textarea name="Message" placeholder="About me..." name="aboutMe"></textarea>
+                    <textarea placeholder="About me..." name="aboutMe"></textarea>
                 </div>
                 
                 <div class="main-title">
@@ -364,7 +364,10 @@
                         </div>
                     </div>
                     <div class="form-control-w3l">
-                        <textarea name="Message" placeholder="Work Description..." name="expCompDescr"></textarea>
+                        <input type="text" placeholder="Website" name="expCompSite">
+                    </div>
+                    <div class="form-control-w3l">
+                        <textarea placeholder="Work Description..." name="expCompDescr"></textarea>
                     </div>
                 {% endfor %}
 
@@ -383,6 +386,9 @@
                             <input type="text" class="form-control" placeholder="Time period" name="eduTime" required="">
                         </div>
                     </div>
+                    <div class="form-control-w3l">
+                        <input type="text" placeholder="Website" name="eduSite">
+                    </div>
                 {% endfor %}
 
                 <div class="main-title">
@@ -396,7 +402,7 @@
                         </div>
                         <div class="form-grid-w3ls">
                             <!-- <input type="text" class="form-control" placeholder="Level 0 - 100" required=""> -->
-                            <input class="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" name="skillVal1"/>
+                            <input class="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" name="skillVal"/>
                             <span class="sliderVal"></span>
                         </div>
                     </div>
@@ -443,15 +449,7 @@
                 <div class="main-title">
                     <h3>Contact Information</h3>
                 </div>
-                <div class="form-group">
-                    <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="Street" name="contactStreet" required="">
-                    </div>
-                    <div class="form-grid-w3ls">
-                        <input type="text" class="form-control" placeholder="City" name="contactCity" required="">
-                    </div>
 
-                </div>
                 <div class="form-group">
                     <div class="form-grid-w3ls">
                         <input type="text" class="form-control" placeholder="Website" name="contactWebsite" required="">
