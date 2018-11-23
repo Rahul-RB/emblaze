@@ -2,7 +2,7 @@ def dictToYaml(inpDict):
     opDict = {
         "name": {
             "first": inpDict["firstName"][0],
-            "middle": "null",
+            "middle": "",
             "last": inpDict["lastName"][0]
           },
           "about": inpDict["aboutMe"][0],
