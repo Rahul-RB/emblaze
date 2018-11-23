@@ -12,6 +12,8 @@ extractors:
   - Linux
   - Windows
   - [Mac, MacOS]
+  - Android
+  - iOS
 
  database:
   - SQL
@@ -58,6 +60,7 @@ extractors:
   - [swimming, swim]
   - [soccer, football]
   - painting
+  - table-tennis
   - reading
 
  open-source:

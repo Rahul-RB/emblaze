@@ -232,3 +232,84 @@ def uploadPDF():
             return redirect(url_for('viewUploadedFile',
                                     filename=filename))
     flash("Error")
+
+@app.route("/getAboutContents",methods=["GET"])
+def getAboutContents():
+    # <div class='bg-img bg-half overlay' style='background-image:url({{url_for(' static ',filename='img/about4.jpg ')}})'></div>\
+    res = "\
+    <div class='section md-section bg-grey'>\
+        <div class='bg-img bg-half overlay' id='back1'></div>\
+            <div class='container'>\
+                <div class='row'>\
+                    <div class='col-md-offset-7 col-md-6'>\
+                        <h2 class='title'>About Us</h2>\
+                        <p class='lead'>We are the class leader in making a resume shine its way through</p>\
+                        <p>In this highly competitive world where getting your resume to from the reception to the recruiters hands are highly tough, the last thing you want is your resume to be like a notepad document. Use our tool and make a fancy one!</p>\
+                    </div>\
+                </div>\
+            </div>\
+    </div>\
+    "
+    res = {
+        "content":res
+    }
+    return jsonify(res)
+
+@app.route("/getClientContents",methods=["GET"])
+def getClientContents():
+    # <div class='bg-img bg-half overlay' style='background-image:url({{url_for(' static ',filename='img/about4.jpg ')}})'></div>\
+    res ="\
+            <div class='bg-img overlay' id='back2')></div>\
+            <div id='testimonial' class='section sm-section'>\
+                <div class='container'>\
+                    <div class='row'>\
+                        <div class='section-header text-center'>\
+                            <h2 class='title'>Happy Clients</h2>\
+                        </div>\
+                        <div class='col-md-8 col-md-offset-2'>\
+                                <div class='testimonial'>\
+                                    <div class='testimonial-quote'>\
+                                        <p>My resume just sailed through.</p>\
+                                    </div>\
+                                    <div class='testimonial-meta'>\
+                                        <h3>Jon Snow</h3>\
+                                        <span>Ally House Stark</span>\
+                                    </div>\
+                                </div>\
+                                <div class='testimonial'>\
+                                    <div class='testimonial-quote'>\
+                                        <p>Tony stark hired me after seeing my resume</p>\
+                                    </div>\
+                                    <div class='testimonial-meta'>\
+                                        <h3>Tom Holland</h3>\
+                                        <span>Spiderman</span>\
+                                    </div>\
+                                </div>\
+                                <div class='testimonial'>\
+                                    <div class='testimonial-quote'>\
+                                        <p>Marvel rejected me after seeing my resume, I am coming Marvel</p>\
+                                    </div>\
+                                    <div class='testimonial-meta'>\
+                                        <h3>Thanos</h3>\
+                                        <span>CEO Mr-Snaps-My-Finger</span>\
+                                    </div>\
+                                </div>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+        "    
+
+    res = {
+        "content":res
+    }
+    return jsonify(res)
+
+
+@app.route("/getInfo")
+def getInfo():
+    infoType = request.args.get("infoType","",type=str)
+    search = request.args.get("search","",type=str)
+    res = models_common.getInfo(infoType,search)
+
+    return jsonify(res)

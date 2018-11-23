@@ -1,11 +1,11 @@
 <template>
-<div class="page-wrapper">
-  <div class="page" :id="$route.params.resumeid">
-    <div class="page-inner">
-      <component :is="$route.params.resumeid"></component>
+    <div class="page-wrapper">
+        <div class="page" :id="$route.params.resumeid">
+            <div class="page-inner">
+                <component :is="$route.params.resumeid"></component>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </template>
 
 <script>
@@ -23,7 +23,7 @@ export default Vue.component('resume', {
 }
 .page-wrapper {
   overflow-x: hidden;
-  background: #CCCCCC;
+  background: #FFFFFF;
   margin: 0;
   padding: 0;
   -webkit-print-color-adjust: exact;
